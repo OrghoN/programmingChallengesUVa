@@ -5,7 +5,7 @@ import sys
 global cache
 cache = [0] * 1000000
 
-def cyclesCache(number):
+def cyclesFastCache(number):
     cycles = 1
     numbers = []
     while number > 1:
@@ -35,7 +35,6 @@ def cycles(number):
             cycles+=1
     return cycles
 
-
 def cyclesRange(num1, num2):
     cycleLengths = []
 
@@ -51,11 +50,11 @@ def cyclesRange(num1, num2):
     for i in range(start,stop):
         cycleLengths.append(cycles(i))
 
-    return max(cycleLengths)
-    # return (cycleLengths)
+    # return max(cycleLengths)
+    return (cycleLengths)
 
-for i in sys.stdin:
-    numbers = i.split()
-    numbers = list(map(int, numbers))
-    print(numbers[0],numbers[1], cyclesRange(numbers[0], numbers[1]))
-#     print(cyclesRange(numbers[0], numbers[1]))
+# for i in sys.stdin:
+#     numbers = i.split()
+#     numbers = list(map(int, numbers))
+#     print(numbers[0],numbers[1], cyclesRange(numbers[0], numbers[1]))
+print(cyclesRange(1, 999999))
